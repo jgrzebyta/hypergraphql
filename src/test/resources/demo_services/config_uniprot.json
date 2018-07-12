@@ -1,0 +1,19 @@
+{
+    "name": "dbpedia-hgql",
+    "schema": "src/test/resources/demo_services/uniprot.graphql",
+    "server": {
+        "port": 8086,
+        "graphql": "/graphql",
+        "graphiql": "/graphiql"
+    },
+    "services": [
+        {
+            "id": "uniprot-sparql",
+            "type": "SPARQLEndpointService",
+            "url": "http://sparql.uniprot.org/sparql",
+            "graph": "",
+            "user": "",
+            "password": ""
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+type __Context {
+    Taxon:          _@href(iri: "http://purl.uniprot.org/core/Taxon")
+    Rank:           _@href(iri: "http://purl.uniprot.org/core/Rank")
+    subClassOf:     _@href(iri: "http://www.w3.org/2000/01/rdf-schema#subClassOf")
+    label:          _@href(iri: "http://www.w3.org/2000/01/rdf-schema#label")
+    comment:        _@href(iri: "http://www.w3.org/2000/01/rdf-schema#comment")
+    rank:           _@href(iri: "http://purl.uniprot.org/core/rank")
+    scientificName:  _@href(iri: "http://purl.uniprot.org/core/scientificName")
+    partOfLineage:   _@href(iri: "http://purl.uniprot.org/core/partOfLineage")
+    otherName:       _@href(iri: "http://purl.uniprot.org/core/otherName")
+}
+
+type Taxon @service(id: "uniprot-sparql") {
+    subClassOf: Taxon @service(id: "uniprot-sparql")
+    rank: Rank @service(id: "uniprot-sparql")
+    scientificName: String @service(id: "uniprot-sparql")
+    otherName: [String]! @service(id: "uniprot-sparql")
+    partOfLineage: Boolean @service(id: "uniprot-sparql")
+}
+
+type Rank @service(id: "uniprot-sparql") {
+    label: String @service(id: "uniprot-sparql")
+}
